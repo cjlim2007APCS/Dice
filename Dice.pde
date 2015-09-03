@@ -2,15 +2,21 @@
 
 void setup()
 {
-	size(300,300);
+	size(300,350);
 	noLoop();
 }
+int oneCounter = 0;
 void draw()
 {
 	background(255);
-	Die jeremy = new Die(150, 150);
-	jeremy.roll();
-	jeremy.show();
+	for (int y = 25; y<=275; y=y+50) {
+		for (int x = 25; x<=275; x=x+50) {
+		Die jeremy = new Die(x, y);
+		jeremy.roll();
+		jeremy.show();
+		}
+	}
+	System.out.println(oneCounter);
 }
 void mousePressed()
 {
@@ -33,6 +39,7 @@ class Die //models one single dice cube
 		rect(dieX - 25, dieY - 25, 50, 50);
 		if (sampleRoll == 1) {
 			ellipse(dieX, dieY, 10, 10);
+			oneCounter++;
 		} else if (sampleRoll == 2) {
 			ellipse(dieX - 12, dieY + 12, 10, 10);
 			ellipse(dieX + 12, dieY - 12, 10, 10);
