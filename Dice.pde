@@ -6,6 +6,11 @@ void setup()
 	noLoop();
 }
 int oneCounter = 0;
+int twoCounter = 0;
+int threeCounter = 0;
+int fourCounter = 0;
+int fiveCounter = 0;
+int sixCounter = 0;
 void draw()
 {
 	background(255);
@@ -16,7 +21,14 @@ void draw()
 		jeremy.show();
 		}
 	}
-	System.out.println(oneCounter);
+	fill(0);
+	text("1. "+oneCounter, 0, 325);
+	text("2. "+twoCounter, 50, 325);
+	text("3. "+threeCounter, 100, 325);
+	text("4. "+fourCounter, 150, 325);
+	text("5. "+fiveCounter, 200, 325);
+	text("6. "+sixCounter, 250, 325);
+	fill(255);
 }
 void mousePressed()
 {
@@ -43,21 +55,25 @@ class Die //models one single dice cube
 		} else if (sampleRoll == 2) {
 			ellipse(dieX - 12, dieY + 12, 10, 10);
 			ellipse(dieX + 12, dieY - 12, 10, 10);
+			twoCounter++;
 		} else if (sampleRoll == 3) {
 			ellipse(dieX, dieY, 10, 10);
 			ellipse(dieX - 12, dieY + 12, 10, 10);
 			ellipse(dieX + 12, dieY - 12, 10, 10);
+			threeCounter++;
 		} else if (sampleRoll == 4) {
 			ellipse(dieX + 12, dieY + 12, 10, 10);
 			ellipse(dieX - 12, dieY - 12, 10, 10);
 			ellipse(dieX - 12, dieY + 12, 10, 10);
 			ellipse(dieX + 12, dieY - 12, 10, 10);
+			fourCounter++;
 		} else if (sampleRoll == 5) {
 			ellipse(dieX + 12, dieY + 12, 10, 10);
 			ellipse(dieX - 12, dieY - 12, 10, 10);
 			ellipse(dieX - 12, dieY + 12, 10, 10);
 			ellipse(dieX + 12, dieY - 12, 10, 10);
 			ellipse(dieX, dieY, 10, 10);
+			fiveCounter++;
 		} else {
 			ellipse(dieX + 12, dieY + 12, 10, 10);
 			ellipse(dieX - 12, dieY - 12, 10, 10);
@@ -65,6 +81,7 @@ class Die //models one single dice cube
 			ellipse(dieX + 12, dieY - 12, 10, 10);
 			ellipse(dieX - 12, dieY, 10, 10);
 			ellipse(dieX + 12, dieY, 10, 10);
+			sixCounter++;
 		}
  	}
 }
